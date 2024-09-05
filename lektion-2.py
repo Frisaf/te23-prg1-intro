@@ -7,7 +7,7 @@ print("I wonder how ancient you are... (or how much of a baby)")
 
 try:
     while True:
-        user_age = int(input("What's your age: "))
+        user_age = float(input("What's your age: "))
 
         if user_age <= 1:
             print("Are you reallyone year or younger?")
@@ -28,12 +28,8 @@ try:
             break
 
         else:
-            print(f"Okay! That means that you will be {user_age + 1} years old next year! One step closer to the grave \U0001F970")
+            print(f"Okay! That means that you will be {user_age + 1:.0f} years old next year! One step closer to the grave \U0001F970")
             break
 
 except ValueError:
-    # if type(user_age) == float:
-    #     print("It can't be a float")
-    
-    # else:
-        print("That is not a number")
+    print("That is not a number.")
