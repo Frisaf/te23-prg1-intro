@@ -8,6 +8,27 @@ player2_points = 0
 rounds = 0
 play_game = "y"
 
+dice_options = {
+    "d6": 6,
+    "d8": 8,
+    "d10": 10,
+    "d12": 12,
+    "d20": 20,
+    "d100": 100,
+}
+
+name = input("Welcome! What is your name?\n> ")
+print(f"Welcome {name}!")
+dice_choice = input("Choose a dice! Options: d6, d8, d10, d12, d20, d100\n> ")
+
+for dice in dice_options:
+    dice_choice = dice_options[dice]
+    print(dice_choice)
+    # if dice in dice_options[dice]:
+    #     sides = dice_options[dice]
+
+input("Press ENTER to continue")
+
 while play_game == "y":
     player1_roll = random.randint(1, 6)
     player2_roll = random.randint(1, 6)
@@ -17,21 +38,21 @@ while play_game == "y":
     print(f"Player 2 rolled: {player2_roll}")
 
     if player1_roll > player2_roll:
-        print("Player 1 won.")
+        print(f"{name} won.")
 
         player1_points = player1_points + 1
         rounds = rounds + 1
 
-        print(f"The standing is:\n1: {player1_points} | 2: {player2_points}")
+        print(f"The standing is:\n{name}: {player1_points} | Computer: {player2_points}")
         input("Press enter to continue")
     
     elif player1_roll < player2_roll:
-        print("Player 2 won.")
+        print("Computer won.")
 
         player2_points  = player2_points + 1
         rounds = rounds + 1
 
-        print(f"The standing is:\n1: {player1_points} | 2: {player2_points}")
+        print(f"The standing is:\n{name}: {player1_points} | Computer: {player2_points}")
         input("Press enter to continue")
     
     elif player1_roll == player2_roll:
@@ -39,11 +60,11 @@ while play_game == "y":
     
     if rounds == 3:
         if player1_points > player2_points:
-            print("PLAYER 1 WON IT ALL!")
+            print(f"{name.upper()} WON IT ALL!")
             play_game = input("Do you want to play again? y/n\n> ").lower()
         
         elif player1_points < player2_points:
-            print("PLAYER 2 WON IT ALL!")
+            print("COMPUTER WON IT ALL!")
             play_game = input("Do you want to play again? y/n\n> ").lower()
     
     else:
