@@ -59,3 +59,5 @@ while running == "running":
     true_score = true_sum/3
 
     print(true_score)
+
+    running = input("Do you want to continue? Type stop if you want to stop.\n> ")
