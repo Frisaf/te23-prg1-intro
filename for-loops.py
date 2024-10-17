@@ -14,8 +14,8 @@ while run_program:
         if choice == 1:
             print("SEAT TYPES:")
 
-            for seat in seat_types:
-                print(seat.title())
+            for index, seat in enumerate(seat_types):
+                print(f"{index + 1}. {seat.title()}")
         
         elif choice == 2:
             new_seat = input("Add a seat\n> ")
@@ -23,15 +23,15 @@ while run_program:
             seat_types.append(new_seat)
         
         elif choice == 3:
-            removed_seat = input("Which seat do you want to remove?\n> ").lower()
+            removed_seat = int(input("Which seat do you want to remove?\n> "))
 
-            if removed_seat not in seat_types:
-                print("Please provide a valid answer")
+            # if removed_seat not in enumerate(seat_types):
+            #     print("Please provide a valid answer")
             
-            else:
-                print(f"Removing {removed_seat} from the list.")
+            # else:
+            print(f"Removing number {removed_seat} from the list.")
 
-                seat_types.remove(removed_seat)
+            seat_types.pop(removed_seat - 1)
         
         elif choice == 4:
             print("Okay")
