@@ -1,4 +1,10 @@
-birth_year = int(input("Which year were you born?\n> "))
+while True:
+    try:
+        birth_year = int(input("Which year were you born?\n> "))
+        break
+
+    except ValueError:
+        print("Please provide a valid year.")
 
 months = {
     "January": 1,
@@ -30,8 +36,19 @@ while True:
     else:
         print("Please provide a valid month.")
 
-birth_date = int(input("Which date were you born?\n> "))
+while True:
+    try:
+        birth_date = int(input("Which date were you born?\n> "))
+        
+        if 0 < birth_date <= 31:
+            break
+
+        else:
+            print("Please provide a valid date.")
+
+    except ValueError:
+        print("Please provide a valid date.")
 
 social_security = str(birth_year) + str(month_number) + str(birth_date)
 
-print(social_security)
+print(f"Your social security number: {social_security}")
