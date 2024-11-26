@@ -1,0 +1,28 @@
+#! /usr/bin/python3
+import sys
+
+for line in sys.stdin:
+    data = line.strip()
+
+    try:
+        amount = int(data)
+    
+    except ValueError:
+        placement = data
+        results = []
+
+        while amount > 0:
+            try:
+                first = placement.index(".")
+                second = placement.index(".", first + 1)
+                result = second - first + 1
+                results.append(result)
+                placement = data[second:]
+                amount -= 1
+            
+            except ValueError:
+                break
+
+        output = min(results)
+
+        print(output - 2)

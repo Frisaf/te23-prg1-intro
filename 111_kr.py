@@ -9,7 +9,6 @@ for line in sys.stdin:
     digits = len(str(data))
     bills = 0
     
-
     while True:
         number = digits * one
         division = int(data/int(number))
